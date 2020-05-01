@@ -19,3 +19,76 @@ function kolize(a, b) {
 		|| b.y + b.vyska < a.y));
 }
 */
+
+
+
+
+
+const panacek = {
+	x: 200,
+	y: 100,
+	sirka: 64,
+vyska:70,
+element: document.querySelector('#panacek')
+};
+
+
+umisti();
+//volám funkci
+
+
+document.addEventListener('keydown',posunPanacka);
+
+function posunPanacka(e){
+
+//posun doprava panáčka
+
+if (e.code==='ArrowRight'){
+	panacek.x +=10;
+	if(panacek.x + panacek.sirka > window.innerWidth){
+		panacek.x= window.innerWidth-panacek.sirka;
+		panacek.element.src = 'images/panacek-vpravo.png';
+	}
+
+	umisti();
+//umisti nemusím všude psát, hodně kódu
+
+}if (e.code==='ArrowLeft'){
+	panacek.x -=10;
+	//umisti();
+	if(panacek.x<0){
+		panacek.x=0;
+		panacek.element.src = 'images/panacek-vlevo.png';
+	}
+
+
+//window.innerWidth souřadnice vpavo okna
+//window.innerHeight	
+
+
+}if (e.code==='ArrowUp'){
+	panacek.y -=10;
+//	umisti();
+panacek.element.src = 'images/panacek-nahoru.png';
+
+
+}if (e.code==='ArrowDown'){
+		panacek.y +=10;
+		if(panacek.y + panacek.vyska>window.innerWidth){
+			panacek.y=window.innerWidth-panacek.sirka;
+
+			panacek.element.src = 'images/panacek-dolu.png';
+		}
+	//	umisti();
+}
+}
+
+
+
+
+
+//vyberu panáčka z css proto style
+function umisti(){
+panacek.element.style.left= `${panacek.x}px `;
+panacek.element.style.top= `${panacek.y}px `;
+}
