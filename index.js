@@ -47,9 +47,9 @@ if (e.code==='ArrowRight'){
 	panacek.x +=10;
 	if(panacek.x + panacek.sirka > window.innerWidth){
 		panacek.x= window.innerWidth-panacek.sirka;
-		
+		panacek.element.src = 'images/panacek-vpravo.png';
 	}
-panacek.element.src = 'images/panacek-vpravo.png';
+
 
 
 	//umisti();
@@ -60,9 +60,9 @@ panacek.element.src = 'images/panacek-vpravo.png';
 	//umisti();
 	if(panacek.x<0){
 		panacek.x=0;
-		
+	panacek.element.src = 'images/panacek-vlevo.png';	
 	}
-panacek.element.src = 'images/panacek-vlevo.png';
+
 
 //window.innerWidth souřadnice vpavo okna
 //window.innerHeight	
@@ -73,18 +73,19 @@ panacek.element.src = 'images/panacek-vlevo.png';
 	if(panacek.y<0){
 		panacek.y=0;
 //	umisti();
-	}
+
 panacek.element.src = 'images/panacek-nahoru.png';
+	}
 
 
-}if (e.code ==='ArrowDown'){
+}else if (e.code ==='ArrowDown'){
 		panacek.y +=10;
 		if(panacek.y + panacek.vyska>window.innerHeight){
 			panacek.y=window.innerHeight-panacek.vyska;
 
-			
+		panacek.element.src = 'images/panacek-dolu.png';	
 		}
-		panacek.element.src = 'images/panacek-dolu.png';
+		
 		umisti();
 }
 }
