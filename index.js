@@ -47,44 +47,47 @@ if (e.code==='ArrowRight'){
 	panacek.x +=10;
 	if(panacek.x + panacek.sirka > window.innerWidth){
 		panacek.x= window.innerWidth-panacek.sirka;
-		panacek.element.src = 'images/panacek-vpravo.png';
+		
 	}
+panacek.element.src = 'images/panacek-vpravo.png';
 
-	umisti();
+
+	//umisti();
 //umisti nemusím všude psát, hodně kódu
 
-}if (e.code==='ArrowLeft'){
+}else if (e.code ==='ArrowLeft'){
 	panacek.x -=10;
 	//umisti();
 	if(panacek.x<0){
 		panacek.x=0;
-		panacek.element.src = 'images/panacek-vlevo.png';
+		
 	}
-
+panacek.element.src = 'images/panacek-vlevo.png';
 
 //window.innerWidth souřadnice vpavo okna
 //window.innerHeight	
 
 
-}if (e.code==='ArrowUp'){
+}else if (e.code ==='ArrowUp'){
 	panacek.y -=10;
+	if(panacek.y<0){
+		panacek.y=0;
 //	umisti();
+	}
 panacek.element.src = 'images/panacek-nahoru.png';
 
 
-}if (e.code==='ArrowDown'){
+}if (e.code ==='ArrowDown'){
 		panacek.y +=10;
-		if(panacek.y + panacek.vyska>window.innerWidth){
-			panacek.y=window.innerWidth-panacek.sirka;
+		if(panacek.y + panacek.vyska>window.innerHeight){
+			panacek.y=window.innerHeight-panacek.vyska;
 
-			panacek.element.src = 'images/panacek-dolu.png';
+			
 		}
-	//	umisti();
+		panacek.element.src = 'images/panacek-dolu.png';
+		umisti();
 }
 }
-
-
-
 
 
 //vyberu panáčka z css proto style
