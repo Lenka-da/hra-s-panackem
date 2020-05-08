@@ -24,7 +24,7 @@ function kolize(a, b) {
 
 
 
-const panacek = {
+const panacek ={
 	x: 200,
 	y: 100,
 	sirka: 64,
@@ -37,7 +37,7 @@ umisti();
 //volám funkci
 
 
-document.addEventListener('keydown',posunPanacka);
+document.addEventListener('keydown', posunPanacka);
 
 function posunPanacka(e){
 
